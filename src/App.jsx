@@ -9,8 +9,6 @@ function App() {
     <Header/>
     <Home/>
      <Card/>
-     <Card/>
-     <Card/>
      
     </>
   )
