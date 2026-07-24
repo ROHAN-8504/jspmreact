@@ -40,22 +40,58 @@ function Card() {
     name: "Spice Affair",
     address: "Patrapada, Bhubaneswar",
     img: "https://images.unsplash.com/photo-1514326640560-7d063ef2aed5"
-  }
+  },
+   {
+    name: "The Zaika",
+    address: "KIIT Square, Bhubaneswar",
+    img: "https://picsum.photos/id/835/600/400"
+  },
+  {
+    name: "Urban Kitchen",
+    address: "Nayapalli, Bhubaneswar",
+    img: "https://picsum.photos/id/1025/600/400"
+  },
+  {
+    name: "Spice Affair",
+    address: "Patrapada, Bhubaneswar",
+    img: "https://picsum.photos/id/1081/600/400"
+  },
+  {
+    name: "99 North",
+    address: "Swosti Premium, Bhubaneswar",
+    img: "https://picsum.photos/id/1040/600/400"
+  },
+  {
+  name: "The Spice Route",
+  address: "Patia, Bhubaneswar",
+  img: "https://picsum.photos/id/292/600/400"
+},
+{
+  name: "Cafe Aroma",
+  address: "Saheed Nagar, Bhubaneswar",
+  img: "https://picsum.photos/id/431/600/400"
+},
+{
+  name: "Royal Biryani House",
+  address: "Jaydev Vihar, Bhubaneswar",
+  img: "https://picsum.photos/id/1080/600/400"
+}
+
 ];
   return (
     <>
-    {
+    <div style={{display:"flex",flexWrap:"wrap",gap:'100px'}}  >
+      {
       restaurants.map((p)=>{
-   return   <div style={{border:"1px solid black"}}   >
+   return   <div style={{border:"1px solid black",width:'250px'}}   >
         <img height={250} width={250}   src={p.img} alt="" />
         <p>{p.name}</p>
-        <p>{p.adress}</p>
+        <p>{p.address}</p>
     </div>
       })
 
     }
-  
-    
+    </div>
     </>
   )
 }
