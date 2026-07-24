@@ -1,6 +1,4 @@
-
-function Card(props) {
-   const restaurants = [
+  const restaurants = [
   {
     name: "Maharaaj",
     address: "Infinia Tower, Chandrasekharpur, Bhubaneswar",
@@ -79,23 +77,6 @@ function Card(props) {
 }
 
 ];
-  return (
-    <>
-    <div style={{display:"flex",flexWrap:"wrap",gap:'100px'}}  >
-      {
-      restaurants.map((p)=>{
-   return   <div style={{border:"1px solid black",width:'250px',borderRadius:'10px'}}   >
-        <img height={250} width={250}   src={p.img} alt="" />
-        <p>{p.name}</p>
-        <p>{p.address}</p>
-        <p>{props.rating}</p>
-    </div>
-      })
 
-    }
-    </div>
-    </>
-  )
-}
 
-export default Card
+export default restaurants;
