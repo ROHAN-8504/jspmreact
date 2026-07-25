@@ -1,14 +1,13 @@
 
-
+import { Link } from "react-router-dom"
 function Nav() {
   return (
     <>
     <nav style={{display:"flex",gap:"20px"}} >
-    <a href="">Signup</a>
-    <a href="">About</a>
-    <a href="">Products</a>
-    <a href="">Pricing</a>
-    <a href="">Support</a>
+    <Link to={'/register'}  >Signup</Link>
+    <Link to={'/about'}  >About</Link>
+    <Link to={'/foods'} >restaraunts</Link>
+    <Link to={'/products'} >Products</Link>
     </nav>
     </>
   )

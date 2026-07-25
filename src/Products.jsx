@@ -1,14 +1,19 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Poductcard from "./Poductcard";
 function Products() {
 
 const [products, setproducts] = useState([])
 
 
-//fetch the products data from the server
+useEffect(()=>{
 fetch('https://fakestoreapi.com/products')
   .then(response => response.json())
   .then(data => setproducts(data));
+},[])
+
+
+//fetch the products data from the server
+
 
 
 
