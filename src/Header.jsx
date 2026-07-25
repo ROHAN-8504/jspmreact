@@ -1,10 +1,9 @@
 import Nav from "./Nav"
-function Header() {
+function Header({setsearchquery}) {
    
     let darkmode=()=>{
       document.body.classList.toggle('toglemode')
     }
-
 
 
   return (
@@ -13,6 +12,7 @@ function Header() {
         justifyContent:"space-evenly"
         }} >
     <img src="src/assets/vite.svg" alt="" />
+    <input   onChange={(e)=>{setsearchquery(e.target.value)}}   width={500}  type="text" />
      <Nav/>
      <img onClick={darkmode}   height={50} width={50}  src="https://www.svgrepo.com/show/309493/dark-theme.svg" alt="" />
     </header>

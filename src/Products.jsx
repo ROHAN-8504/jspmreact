@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
 import Poductcard from "./Poductcard";
-function Products() {
+function Products({serachquery}) {
 
 const [products, setproducts] = useState([])
 
@@ -12,18 +12,19 @@ fetch('https://fakestoreapi.com/products')
 },[])
 
 
+ let filteredproducts=products.filter((p)=>{
+  return p.title.toLowerCase().includes(serachquery.toLowerCase())
+ })
+
+
 //fetch the products data from the server
-
-
-
-
   return (
     <>
     
    <div style={{display:"flex",flexWrap:"wrap",gap:"100px"}}>
 
     {
-        products.map((p)=>{
+        filteredproducts.map((p)=>{
        return   <Poductcard title={p.title}  image={p.image}  price={p.price}  />
         })
     }
