@@ -1,0 +1,427 @@
+ :root {
+	--bg: #0b1020;
+	--bg-soft: #11182b;
+	--surface: rgba(15, 23, 42, 0.82);
+	--surface-strong: rgba(10, 15, 30, 0.92);
+	--card: #f3ede3;
+	--card-strong: #ffffff;
+	--text: #edf2ff;
+	--text-muted: rgba(237, 242, 255, 0.72);
+	--ink: #111827;
+	--line: rgba(255, 255, 255, 0.12);
+	--accent: #ff8a4c;
+	--accent-soft: rgba(255, 138, 76, 0.18);
+	--accent-2: #6dd3c2;
+	--shadow: 0 24px 80px rgba(2, 6, 23, 0.45);
+}
+
+#root {
+	min-height: 100vh;
+}
+
+.app-shell {
+	width: min(1200px, calc(100% - 32px));
+	margin: 0 auto;
+	padding: 24px 0 64px;
+}
+
+.site-header {
+	position: sticky;
+	top: 16px;
+	z-index: 10;
+	display: grid;
+	grid-template-columns: auto minmax(220px, 1fr) auto auto;
+	gap: 18px;
+	align-items: center;
+	padding: 16px 18px;
+	margin-bottom: 28px;
+	border: 1px solid var(--line);
+	border-radius: 24px;
+	background: linear-gradient(135deg, rgba(12, 18, 34, 0.92), rgba(20, 30, 52, 0.7));
+	backdrop-filter: blur(18px);
+	box-shadow: var(--shadow);
+}
+
+.brand-lockup {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+
+.brand-mark {
+	width: 44px;
+	height: 44px;
+	padding: 8px;
+	border-radius: 14px;
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid var(--line);
+}
+
+.eyebrow {
+	margin: 0 0 4px;
+	color: var(--accent-2);
+	text-transform: uppercase;
+	letter-spacing: 0.18em;
+	font-size: 0.72rem;
+	font-weight: 700;
+}
+
+.brand-title,
+.section-heading h2,
+.hero-copy h2,
+.signup-card h3,
+.info-card h3,
+.product-card h3 {
+	margin: 0;
+	font-family: 'Fraunces', Georgia, serif;
+	letter-spacing: -0.03em;
+}
+
+.brand-title {
+	font-size: 1.35rem;
+	color: var(--text);
+}
+
+.search-shell {
+	display: grid;
+	gap: 8px;
+	padding: 12px 14px;
+	border-radius: 18px;
+	border: 1px solid var(--line);
+	background: rgba(255, 255, 255, 0.05);
+}
+
+.search-shell span {
+	font-size: 0.74rem;
+	text-transform: uppercase;
+	letter-spacing: 0.16em;
+	color: var(--text-muted);
+}
+
+.search-shell input,
+.signup-card input {
+	border: 0;
+	outline: none;
+	background: transparent;
+	color: var(--text);
+	font: inherit;
+}
+
+.search-shell input::placeholder,
+.signup-card input::placeholder {
+	color: rgba(237, 242, 255, 0.5);
+}
+
+.site-nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.site-nav a {
+	padding: 10px 14px;
+	border-radius: 999px;
+	color: var(--text);
+	text-decoration: none;
+	border: 1px solid transparent;
+	background: rgba(255, 255, 255, 0.05);
+	transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.theme-toggle:hover,
+.theme-toggle:focus-visible,
+.hero-actions button:hover,
+.hero-actions button:focus-visible,
+.signup-card button:hover,
+.signup-card button:focus-visible {
+	transform: translateY(-1px);
+	border-color: rgba(255, 255, 255, 0.18);
+	background: rgba(255, 255, 255, 0.12);
+}
+
+.theme-toggle {
+	width: 48px;
+	height: 48px;
+	display: grid;
+	place-items: center;
+	border: 1px solid var(--line);
+	border-radius: 16px;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+	cursor: pointer;
+}
+
+.theme-toggle img {
+	filter: invert(1);
+}
+
+.page-section {
+	display: grid;
+	gap: 28px;
+}
+
+.section-heading {
+	max-width: 720px;
+	text-align: left;
+}
+
+.section-heading h2,
+.hero-copy h2 {
+	color: var(--text);
+	font-size: clamp(2.2rem, 4vw, 4.2rem);
+	line-height: 0.95;
+}
+
+.section-heading p,
+.hero-text,
+.hero-note,
+.info-card p,
+.product-card p,
+.signup-card p {
+	color: var(--text-muted);
+}
+
+.hero-card {
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 1.1fr 0.9fr;
+	gap: 28px;
+	align-items: center;
+	padding: clamp(24px, 4vw, 42px);
+	border-radius: 32px;
+	border: 1px solid var(--line);
+	background:
+		radial-gradient(circle at top left, rgba(109, 211, 194, 0.2), transparent 30%),
+		radial-gradient(circle at right center, rgba(255, 138, 76, 0.16), transparent 32%),
+		linear-gradient(145deg, rgba(11, 16, 32, 0.96), rgba(23, 30, 50, 0.88));
+	box-shadow: var(--shadow);
+}
+
+.hero-copy {
+	display: grid;
+	gap: 18px;
+	text-align: left;
+}
+
+.hero-text {
+	max-width: 56ch;
+	font-size: 1.02rem;
+	line-height: 1.7;
+}
+
+.hero-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	align-items: center;
+}
+
+.hero-actions button,
+.signup-card button {
+	padding: 14px 20px;
+	border: 0;
+	border-radius: 999px;
+	color: #101320;
+	background: linear-gradient(135deg, #ffd9b8, #ff8a4c);
+	font-weight: 800;
+	cursor: pointer;
+	box-shadow: 0 16px 30px rgba(255, 138, 76, 0.22);
+}
+
+.hero-note {
+	font-size: 0.95rem;
+}
+
+.hero-visual {
+	position: relative;
+	min-height: 360px;
+	border-radius: 28px;
+	background:
+		linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
+		radial-gradient(circle at 50% 50%, rgba(109, 211, 194, 0.14), transparent 42%);
+	border: 1px solid var(--line);
+}
+
+.floating-panel {
+	position: absolute;
+	display: grid;
+	gap: 6px;
+	padding: 16px 18px;
+	border-radius: 18px;
+	color: var(--ink);
+	background: rgba(255, 245, 236, 0.9);
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
+}
+
+.floating-panel span {
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+	font-size: 0.7rem;
+}
+
+.floating-panel strong {
+	font-family: 'Fraunces', Georgia, serif;
+	font-size: 2.2rem;
+}
+
+.panel-one {
+	top: 32px;
+	left: 32px;
+}
+
+.panel-two {
+	right: 26px;
+	bottom: 34px;
+}
+
+.orb {
+	position: absolute;
+	border-radius: 999px;
+	filter: blur(2px);
+}
+
+.orb-one {
+	inset: 84px 110px auto auto;
+	width: 130px;
+	height: 130px;
+	background: radial-gradient(circle at 35% 35%, #ffe4c7, #ff8a4c 72%);
+}
+
+.orb-two {
+	left: 92px;
+	bottom: 84px;
+	width: 90px;
+	height: 90px;
+	background: radial-gradient(circle at 35% 35%, #d7fff4, #6dd3c2 72%);
+}
+
+.card-grid {
+	display: grid;
+	gap: 22px;
+}
+
+.card-grid--restaurants,
+.card-grid--products {
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.info-card,
+.product-card,
+.signup-card,
+.empty-state {
+	overflow: hidden;
+	border-radius: 26px;
+	border: 1px solid rgba(255, 255, 255, 0.09);
+	background: linear-gradient(180deg, rgba(255, 250, 244, 0.98), rgba(245, 239, 229, 0.96));
+	box-shadow: 0 22px 46px rgba(2, 6, 23, 0.24);
+	text-align: left;
+}
+
+.info-card img,
+.product-card img {
+	width: 100%;
+	height: 240px;
+	object-fit: cover;
+	display: block;
+}
+
+.info-card-body,
+.product-card-body,
+.signup-card {
+	display: grid;
+	gap: 10px;
+	padding: 18px;
+	color: var(--ink);
+}
+
+.card-kicker,
+.card-meta,
+.price-tag {
+	margin: 0;
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+	font-size: 0.72rem;
+	font-weight: 700;
+	color: #6a4b35;
+}
+
+.product-card h3,
+.info-card h3 {
+	color: var(--ink);
+	font-size: 1.35rem;
+}
+
+.signup-layout {
+	grid-template-columns: 1fr 0.8fr;
+	align-items: start;
+}
+
+.section-heading--compact {
+	max-width: 560px;
+}
+
+.signup-card {
+	gap: 14px;
+	padding: 22px;
+}
+
+.signup-card input {
+	padding: 14px 16px;
+	border-radius: 16px;
+	background: rgba(16, 19, 32, 0.04);
+	border: 1px solid rgba(17, 24, 39, 0.08);
+	color: var(--ink);
+}
+
+.signup-card input::placeholder {
+	color: rgba(17, 24, 39, 0.5);
+}
+
+.empty-state {
+	grid-column: 1 / -1;
+	padding: 28px;
+}
+
+@media (max-width: 960px) {
+	.site-header,
+	.signup-layout,
+	.hero-card {
+		grid-template-columns: 1fr;
+	}
+
+	.site-header {
+		position: static;
+	}
+
+	.site-nav {
+		justify-content: flex-start;
+	}
+
+	.hero-visual {
+		min-height: 280px;
+	}
+}
+
+@media (max-width: 640px) {
+	.app-shell {
+		width: min(100% - 20px, 1200px);
+		padding-top: 12px;
+	}
+
+	.site-header {
+		padding: 14px;
+		border-radius: 22px;
+	}
+
+	.brand-title,
+	.section-heading h2,
+	.hero-copy h2 {
+		font-size: clamp(1.9rem, 10vw, 3rem);
+	}
+
+	.hero-card,
+	.signup-card {
+		border-radius: 24px;
+	}
+}

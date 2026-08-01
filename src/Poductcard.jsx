@@ -3,11 +3,14 @@
 function Poductcard({title,image,price}) {
   return (
     <>
-    <div style={{border:"1px solid black",width:"250px"}} >
-        <img height={250}  width={250}   src={image} alt="" />
-        <p>{title}</p>
-        <p>{price}</p>
-    </div>
+    <article className="product-card" >
+        <img src={image} alt="" />
+        <div className="product-card-body">
+          <p className="card-kicker">Collection piece</p>
+          <h3>{title}</h3>
+          <p className="price-tag">{price}</p>
+        </div>
+    </article>
     
     </>
   )

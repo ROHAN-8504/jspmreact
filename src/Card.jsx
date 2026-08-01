@@ -81,19 +81,29 @@ function Card(props) {
 ];
   return (
     <>
-    <div style={{display:"flex",flexWrap:"wrap",gap:'100px'}}  >
+    <section className="page-section">
+      <div className="section-heading">
+        <p className="eyebrow">Restaurants</p>
+        <h2>Places worth a detour</h2>
+        <p>Selected kitchens and dining rooms laid out as a gallery rather than a list.</p>
+      </div>
+    <div className="card-grid card-grid--restaurants"  >
       {
       restaurants.map((p)=>{
-   return   <div style={{border:"1px solid black",width:'250px',borderRadius:'10px'}}   >
-        <img height={250} width={250}   src={p.img} alt="" />
-        <p>{p.name}</p>
-        <p>{p.address}</p>
-        <p>{props.rating}</p>
-    </div>
+   return   <article className="info-card" key={p.name}   >
+        <img src={p.img} alt="" />
+        <div className="info-card-body">
+          <p className="card-kicker">Dining room</p>
+          <h3>{p.name}</h3>
+          <p>{p.address}</p>
+          <p className="card-meta">{props.rating}</p>
+        </div>
+    </article>
       })
 
     }
     </div>
+    </section>
     </>
   )
 }

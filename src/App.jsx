@@ -14,15 +14,17 @@ const [serachquery,setsearchquery]=useState('')
   return (
     <>
     <Header setsearchquery={setsearchquery}  />
-    <Routes>
+    <main className="app-shell">
+      <Routes>
 
-  <Route path='/'  element={<Home/>}  />
-  <Route path='/about' element={<About/>}  />
-  <Route path='/foods' element={<Card  {...restaurants}  />}/>
-  <Route path='/products' element={<Products serachquery={serachquery} />} />
-  <Route path='/register' element={<Signup/>}  />
+    <Route path='/'  element={<Home/>}  />
+    <Route path='/about' element={<About/>}  />
+    <Route path='/foods' element={<Card  {...restaurants}  />}/>
+    <Route path='/products' element={<Products serachquery={serachquery} />} />
+    <Route path='/register' element={<Signup/>}  />
 
-    </Routes>
+      </Routes>
+    </main>
     </>
   )
 }
